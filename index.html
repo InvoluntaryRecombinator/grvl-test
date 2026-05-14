@@ -89,12 +89,35 @@
         </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-12 text-center">
-        <button onclick="toggleVideo()" id="demo-btn" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all">
-            Watch the Demo
-        </button>
+   <section class="max-w-4xl mx-auto px-6 py-12 text-center">
         
-        <div id="video-container" class="mt-8 overflow-hidden transition-all duration-700 ease-in-out max-h-0 opacity-0">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <button onclick="toggleThrottle()" id="throttle-btn" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-auto">
+                See Model Throttling
+            </button>
+            <button onclick="toggleVideo()" id="demo-btn" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-auto">
+                Watch the Demo
+            </button>
+        </div>
+
+        <div id="throttle-container" class="overflow-hidden transition-all duration-700 ease-in-out max-h-0 opacity-0 w-full mb-8">
+            <div class="bg-[#0e0e10] p-6 rounded-xl border border-stone-800 shadow-2xl">
+                <div class="mb-8 flex justify-center w-full">
+                    <div id="comp-toggle-btn" class="relative flex items-center bg-[#151517] border border-stone-800 rounded-full p-1 cursor-pointer w-[320px]">
+                        <div id="comp-toggle-slider" class="absolute left-1 top-1 w-[calc(50%-4px)] h-[calc(100%-8px)] bg-stone-700 rounded-full transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1)"></div>
+                        <div class="relative z-10 w-1/2 text-center py-2 text-xs tracking-widest uppercase font-bold text-white transition-colors duration-300" id="comp-label-before">Native Voice</div>
+                        <div class="relative z-10 w-1/2 text-center py-2 text-xs tracking-widest uppercase font-bold text-stone-500 transition-colors duration-300" id="comp-label-after">With GRVL</div>
+                    </div>
+                </div>
+
+                <div class="relative w-full aspect-[16/10] rounded-lg overflow-hidden border border-stone-900 bg-[#151517]">
+                    <img id="comp-img-native" src="throttle-1.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-100" alt="Native Voice Refusal">
+                    <img id="comp-img-grvl" src="throttle-2.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-0" alt="GRVL Success">
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-container" class="overflow-hidden transition-all duration-700 ease-in-out max-h-0 opacity-0">
             <div class="aspect-video w-full bg-[#151517] rounded-xl border border-stone-800 shadow-2xl flex items-center justify-center italic text-stone-600">
                 [ Insert OBS Demo Video Here ]
             </div>
@@ -126,7 +149,7 @@
     </section>
 
     <footer class="py-12 text-center border-t border-stone-900/50 text-stone-600 text-xs font-bold tracking-widest uppercase">
-        Built by Jwala B.
+        
     </footer>
 
     <script>
@@ -198,6 +221,65 @@
                 }, 300);
             }
         }
+
+        // --- NEW: THROTTLE DROPDOWN LOGIC ---
+        function toggleThrottle() {
+            const container = document.getElementById('throttle-container');
+            const btn = document.getElementById('throttle-btn');
+            
+            if (container.style.maxHeight) {
+                container.style.maxHeight = null;
+                container.style.opacity = '0';
+                btn.innerHTML = 'See Model Throttling';
+            } else {
+                container.style.maxHeight = "1200px"; // Gives it plenty of room to open
+                container.style.opacity = '1';
+                btn.innerHTML = 'Close Example';
+                setTimeout(() => {
+                    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+            }
+        }
+
+        // --- NEW: THROTTLE IMAGE TOGGLE LOGIC ---
+        const compToggleBtn = document.getElementById('comp-toggle-btn');
+        const compToggleSlider = document.getElementById('comp-toggle-slider');
+        const compLabelBefore = document.getElementById('comp-label-before');
+        const compLabelAfter = document.getElementById('comp-label-after');
+        const compImgNative = document.getElementById('comp-img-native');
+        const compImgGrvl = document.getElementById('comp-img-grvl');
+        
+        let compShowingNative = true;
+        let compIsAnimating = false;
+
+        compToggleBtn.addEventListener('click', () => {
+            if (compIsAnimating) return; 
+            compIsAnimating = true;
+
+            if (compShowingNative) {
+                compToggleSlider.style.transform = 'translateX(100%)';
+                compLabelBefore.classList.remove('text-white');
+                compLabelBefore.classList.add('text-stone-500');
+                compLabelAfter.classList.remove('text-stone-500');
+                compLabelAfter.classList.add('text-white');
+                
+                compImgNative.style.opacity = '0';
+                compImgGrvl.style.opacity = '1';
+            } else {
+                compToggleSlider.style.transform = 'translateX(0)';
+                compLabelBefore.classList.remove('text-stone-500');
+                compLabelBefore.classList.add('text-white');
+                compLabelAfter.classList.remove('text-white');
+                compLabelAfter.classList.add('text-stone-500');
+
+                compImgNative.style.opacity = '1';
+                compImgGrvl.style.opacity = '0';
+            }
+
+            compShowingNative = !compShowingNative;
+            setTimeout(() => { compIsAnimating = false; }, 500); 
+        });
+
     </script>
 </body>
 </html>
