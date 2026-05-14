@@ -1,0 +1,15 @@
+# OS and Editor generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.vscode/
+
+# Unused Experimental Images
+black-paper.png
+grey-paper.png
+
+# Prevent accidental future screenshots from uploading
+Screenshot*.png
+Screenshot*.jpg
