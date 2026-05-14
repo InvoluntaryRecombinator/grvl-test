@@ -25,9 +25,12 @@
 
     <nav class="w-full max-w-5xl mx-auto px-6 py-8 flex justify-between items-center">
         <span class="font-black tracking-tighter text-white text-xl">GRVL</span>
-        <button class="text-xs font-bold uppercase tracking-widest text-stone-400 hover:text-white transition-colors border border-stone-800 px-4 py-2 rounded-full hover:bg-stone-800/50">Add to Chrome</button>
+        
+        <a href="grvl-extension.zip" download class="text-xs font-bold uppercase tracking-widest text-stone-400 hover:text-white transition-colors border border-stone-800 px-4 py-2 rounded-full hover:bg-stone-800/50 block text-center">
+            Download GRVL
+        </a>
     </nav>
-
+    
     <section class="relative pt-12 pb-16 flex flex-col items-center justify-center px-6">
         <div class="text-center w-full max-w-4xl">
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-8 text-[#efedea]">
@@ -81,7 +84,7 @@
                 To maintain a fast conversational flow, 'voice mode' models are often throttled in all sorts of ways—from their internal reasoning capabilities, to the amount of text they are willing to generate, to the internal tools they are allowed to use.
             </p>
             <p>
-                <span class="whitespace-nowrap font-black text-white tracking-widest">G.R.V.L.</span> is a Chrome extension for <strong class="text-white">G</strong>emini that initiates a <strong class="text-white">R</strong>eactive <strong class="text-white">V</strong>oice-controlled <strong class="text-white">L</strong>oop to give your hands-free AI its brain back. It works directly on your desktop, exactly as if you were typing the prompts yourself. You can dictate your thoughts, send them, and have the response read aloud in a continuous loop—all without ever touching your keyboard. 
+                <span class="whitespace-nowrap font-black text-white tracking-widest">G.R.V.L.</span> is a Chrome extension for <strong class="text-white">G</strong>emini that initiates a <strong class="text-white">R</strong>eactive <strong class="text-white">V</strong>oice-controlled <strong class="text-white">L</strong>oop within a normal chat to give your hands-free AI its brain back. It works directly on your desktop, exactly as if you were typing the prompts yourself. You can dictate your thoughts, send them, and have the response read aloud in a continuous loop—all without ever touching your keyboard. 
             </p>
             <p>
                 Using fully customizable trigger phrases, you can send prompts, erase dictated text, or interrupt the model mid-sentence. It runs entirely on your own Gemini account, ensuring you never sacrifice the intelligence you're used to having—all while your conversations are kept private and secure.
@@ -92,10 +95,10 @@
    <section class="max-w-4xl mx-auto px-6 py-12 text-center">
         
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <button onclick="toggleThrottle()" id="throttle-btn" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-auto">
+            <button onclick="toggleThrottle()" id="throttle-btn" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-64 text-center">
                 See Model Throttling
             </button>
-            <button onclick="toggleVideo()" id="demo-btn" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-auto">
+            <button onclick="toggleVideo()" id="demo-btn" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-64 text-center">
                 Watch the Demo
             </button>
         </div>
