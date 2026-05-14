@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRVL | Hands-Free Reactive Voice Loop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .paper-shadow { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3); }
+        .accordion-content { transition: max-height 0.3s ease-out, opacity 0.3s ease-out; max-height: 0; opacity: 0; overflow: hidden; }
+        .accordion-active .accordion-content { max-height: 300px; opacity: 1; }
+        .accordion-active .chevron { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-[#0e0e10] text-stone-300 font-sans selection:bg-stone-500/30">
+
+    <nav class="w-full max-w-5xl mx-auto px-6 py-8 flex justify-between items-center">
+        <span class="font-black tracking-tighter text-white text-xl">GRVL</span>
+        <button class="text-xs font-bold uppercase tracking-widest text-stone-400 hover:text-white transition-colors border border-stone-800 px-4 py-2 rounded-full hover:bg-stone-800/50">Add to Chrome</button>
+    </nav>
+
+    <section class="relative pt-12 pb-16 flex flex-col items-center justify-center px-6">
+        <div class="text-center w-full max-w-4xl">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-8 text-[#efedea]">
+                Don't get your hands dirty.
+            </h1>
+            <img src="paper-logo-dark.png" alt="GRVL Logo" class="w-full h-auto max-w-3xl mx-auto hover:scale-[1.01] transition-transform duration-500">
+        </div>
+    </section>
+
+    <section id="the-box" class="pt-8 pb-24 px-6 flex flex-col items-center justify-center">
+        
+        <div class="mb-10 flex justify-center w-full">
+            <div id="toggle-btn" class="relative flex items-center bg-[#151517] border border-stone-800 rounded-full p-1 cursor-pointer w-[320px]">
+                <div id="toggle-slider" class="absolute left-1 top-1 w-[calc(50%-4px)] h-[calc(100%-8px)] bg-stone-700 rounded-full transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1)"></div>
+                <div class="relative z-10 w-1/2 text-center py-2 text-xs tracking-widest uppercase font-bold text-white transition-colors duration-300" id="label-before">Before GRVL</div>
+                <div class="relative z-10 w-1/2 text-center py-2 text-xs tracking-widest uppercase font-bold text-stone-500 transition-colors duration-300" id="label-after">After GRVL</div>
+            </div>
+        </div>
+
+        <div id="toggle-status" class="text-center h-20 flex items-center justify-center mb-10 transition-opacity duration-300 px-4">
+            <span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">
+                Native voice mode makes your AI seem dumber than a <span class="italic text-white font-serif">box of rocks.</span>
+            </span>
+        </div>
+
+        <div id="diorama-container" class="relative w-full max-w-[800px] aspect-[16/9] mx-auto group paper-shadow" style="perspective: 1200px;">
+            <div id="diorama-card" class="w-full h-full relative rounded-sm" style="transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
+                <div class="absolute inset-0 w-full h-full" style="backface-visibility: hidden;">
+                    <img id="front-image" src="diorama-1.jpeg" class="w-full h-full object-cover border-[6px] border-[#151517] rounded-sm" alt="The Struggle">
+                </div>
+                <div class="absolute inset-0 w-full h-full" style="backface-visibility: hidden; transform: rotateX(180deg);">
+                    <img src="cardboard.jpeg" class="w-full h-full object-cover border-[6px] border-[#151517] rounded-sm" alt="Cardboard Back">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-24 text-center lg:text-left">
+        <div class="space-y-8 text-lg text-stone-400 leading-relaxed font-medium">
+            <p>
+                To maintain a fast conversational flow, mobile voice models are greatly throttled—from their internal reasoning capabilities, to the amount of text they are willing to generate, to the internal tools they are allowed to use.
+            </p>
+            <p>
+                <span class="whitespace-nowrap font-black text-white tracking-widest">G.R.V.L.</span> is a Chrome extension for <strong class="text-white">G</strong>emini that initiates a <strong class="text-white">R</strong>eactive <strong class="text-white">V</strong>oice-controlled <strong class="text-white">L</strong>oop that gives your AI its brain back. It works directly on your desktop, exactly as if you were typing the prompts yourself. You can dictate your thoughts, send them, and have the response read aloud in a continuous loop—all without ever touching your keyboard. 
+            </p>
+            <p>
+                Using fully customizable trigger phrases, you can send prompts, erase dictated text, or interrupt the model mid-sentence. It runs entirely on your own account, ensuring you never sacrifice the intelligence you're used to having, while your conversations are kept private and secure.
+            </p>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-12 text-center">
+        <button onclick="toggleVideo()" id="demo-btn" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all">
+            Watch the Demo
+        </button>
+        
+        <div id="video-container" class="mt-8 overflow-hidden transition-all duration-700 ease-in-out max-h-0 opacity-0">
+            <div class="aspect-video w-full bg-[#151517] rounded-xl border border-stone-800 shadow-2xl flex items-center justify-center italic text-stone-600">
+                [ Insert OBS Demo Video Here ]
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-6 py-32 space-y-4">
+        <h3 class="text-stone-600 font-bold text-xs uppercase tracking-[0.2em] mb-12 text-center">Technical Architecture</h3>
+        
+        <div class="border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer" onclick="this.classList.toggle('accordion-active')">
+            <div class="w-full p-6 flex justify-between items-center select-none">
+                <span class="font-bold text-lg text-stone-200">Zero Server Storage (Privacy First)</span>
+                <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
+            </div>
+            <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
+                <p class="pb-6">GRVL operates entirely within your browser's DOM. We do not route your conversations through third-party APIs or store a single line of your data. Your chats are saved directly to your native Google account, exactly as they would be if you typed them.</p>
+            </div>
+        </div>
+
+        <div class="border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer" onclick="this.classList.toggle('accordion-active')">
+            <div class="w-full p-6 flex justify-between items-center select-none">
+                <span class="font-bold text-lg text-stone-200">Customizable Hot-Phrases</span>
+                <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
+            </div>
+            <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
+                <p class="pb-6">You control the loop. Configure your own custom verbal commands to execute actions like <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Send Prompt"</span>, <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Scratch That"</span>, or <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Stop Reading"</span>.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center border-t border-stone-900/50 text-stone-600 text-xs font-bold tracking-widest uppercase">
+        Built by Jwala B.
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-btn');
+        const toggleSlider = document.getElementById('toggle-slider');
+        const labelBefore = document.getElementById('label-before');
+        const labelAfter = document.getElementById('label-after');
+        
+        const card = document.getElementById('diorama-card');
+        const frontImage = document.getElementById('front-image');
+        const statusText = document.getElementById('toggle-status');
+        
+        let currentRotation = 0;
+        let showingFirstImage = true;
+        let isAnimating = false;
+
+        toggleBtn.addEventListener('click', () => {
+            if (isAnimating) return; 
+            isAnimating = true;
+
+            currentRotation -= 360;
+            card.style.transform = `rotateX(${currentRotation}deg)`;
+            
+            statusText.style.opacity = '0';
+            
+            if (showingFirstImage) {
+                toggleSlider.style.transform = 'translateX(100%)';
+                labelBefore.classList.remove('text-white');
+                labelBefore.classList.add('text-stone-500');
+                labelAfter.classList.remove('text-stone-500');
+                labelAfter.classList.add('text-white');
+            } else {
+                toggleSlider.style.transform = 'translateX(0)';
+                labelBefore.classList.remove('text-stone-500');
+                labelBefore.classList.add('text-white');
+                labelAfter.classList.remove('text-white');
+                labelAfter.classList.add('text-stone-500');
+            }
+
+            setTimeout(() => {
+                if (showingFirstImage) {
+                    frontImage.src = 'diorama-2.jpeg'; 
+                    // Gray Base, White Highlight
+                    statusText.innerHTML = '<span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">GRVL keeps your model\'s intelligence <span class="italic font-serif text-white">solid.</span></span>';
+                } else {
+                    frontImage.src = 'diorama-1.jpeg'; 
+                    // Gray Base, White Highlight
+                    statusText.innerHTML = '<span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">Native voice mode makes your AI seem dumber than a <span class="italic text-white font-serif">box of rocks.</span></span>';
+                }
+                statusText.style.opacity = '1';
+                showingFirstImage = !showingFirstImage;
+            }, 400);
+
+            setTimeout(() => { isAnimating = false; }, 800); 
+        });
+
+        function toggleVideo() {
+            const container = document.getElementById('video-container');
+            const btn = document.getElementById('demo-btn');
+            
+            if (container.style.maxHeight) {
+                container.style.maxHeight = null;
+                container.style.opacity = '0';
+                btn.innerHTML = 'Watch the Demo';
+            } else {
+                container.style.maxHeight = "800px";
+                container.style.opacity = '1';
+                btn.innerHTML = 'Close Demo';
+                setTimeout(() => {
+                    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+            }
+        }
+    </script>
+</body>
+</html>
