@@ -10,13 +10,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
+        /* THE DOT GRID LIVES */
+        .dot-grid {
+            background-image: radial-gradient(#1a1a1d 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
         .paper-shadow { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3); }
         .accordion-content { transition: max-height 0.3s ease-out, opacity 0.3s ease-out; max-height: 0; opacity: 0; overflow: hidden; }
         .accordion-active .accordion-content { max-height: 300px; opacity: 1; }
         .accordion-active .chevron { transform: rotate(180deg); }
     </style>
 </head>
-<body class="bg-[#0e0e10] text-stone-300 font-sans selection:bg-stone-500/30">
+<body class="bg-[#0e0e10] text-stone-300 font-sans selection:bg-stone-500/30 dot-grid">
 
     <nav class="w-full max-w-5xl mx-auto px-6 py-8 flex justify-between items-center">
         <span class="font-black tracking-tighter text-white text-xl">GRVL</span>
@@ -28,11 +33,11 @@
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-8 text-[#efedea]">
                 Don't get your hands dirty.
             </h1>
-            <img src="paper-logo-dark.png" alt="GRVL Logo" class="w-full h-auto max-w-3xl mx-auto hover:scale-[1.01] transition-transform duration-500">
+            <img src="paper-logo-dark.png" alt="GRVL Logo" class="w-full h-auto max-w-3xl mx-auto hover:scale-[1.01] transition-transform duration-500 drop-shadow-[0_0_3px_rgba(0,0,0,0.8)]">
         </div>
     </section>
 
-    <section id="the-box" class="pt-8 pb-24 px-6 flex flex-col items-center justify-center">
+    <section id="the-box" class="pt-8 pb-16 px-6 flex flex-col items-center justify-center">
         
         <div class="mb-10 flex justify-center w-full">
             <div id="toggle-btn" class="relative flex items-center bg-[#151517] border border-stone-800 rounded-full p-1 cursor-pointer w-[320px]">
@@ -44,12 +49,12 @@
 
         <div id="toggle-status" class="text-center h-20 flex items-center justify-center mb-10 transition-opacity duration-300 px-4">
             <span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">
-                Native voice mode makes your AI seem dumber than a <span class="italic text-white font-serif">box of rocks.</span>
+                Native voice mode can make your AI seem dumber than a <span class="italic text-white font-serif tracking-tight">box of rocks.</span>
             </span>
         </div>
 
         <div id="diorama-container" class="relative w-full max-w-[800px] aspect-[16/9] mx-auto group paper-shadow" style="perspective: 1200px;">
-            <div id="diorama-card" class="w-full h-full relative rounded-sm" style="transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
+            <div id="diorama-card" class="w-full h-full relative rounded-sm" style="transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);">
                 <div class="absolute inset-0 w-full h-full" style="backface-visibility: hidden;">
                     <img id="front-image" src="diorama-1.jpeg" class="w-full h-full object-cover border-[6px] border-[#151517] rounded-sm" alt="The Struggle">
                 </div>
@@ -60,23 +65,27 @@
         </div>
     </section>
 
-   <section class="max-w-5xl mx-auto px-6 py-24 text-center lg:text-left">
-        <div class="relative w-full">
+  <section class="w-full max-w-4xl mx-auto px-6 py-12 flex justify-center">
+        <div class="relative flex items-center justify-center py-6 px-10 md:px-16 drop-shadow-xl w-[90%] md:w-auto">
+            <img src="dark-grey-paper.png" class="absolute inset-0 w-full h-full object-fill pointer-events-none" alt="Paper Strip">
             
-            <img src="black-paper.png" class="absolute inset-0 w-full h-full object-fill pointer-events-none drop-shadow-2xl" alt="Paper Background">
-            
-            <div class="relative z-10 py-20 px-12 md:px-24 space-y-8 text-lg text-stone-400 leading-relaxed font-medium">
-                <p>
-                    To maintain a fast conversational flow, mobile voice models are greatly throttled—from their internal reasoning capabilities, to the amount of text they are willing to generate, to the internal tools they are allowed to use.
-                </p>
-                <p>
-                    <span class="whitespace-nowrap font-black text-white tracking-widest">G.R.V.L.</span> is a Chrome extension for <strong class="text-white">G</strong>emini that initiates a <strong class="text-white">R</strong>eactive <strong class="text-white">V</strong>oice-controlled <strong class="text-white">L</strong>oop that gives your AI its brain back. It works directly on your desktop, exactly as if you were typing the prompts yourself. You can dictate your thoughts, send them, and have the response read aloud in a continuous loop—all without ever touching your keyboard. 
-                </p>
-                <p>
-                    Using fully customizable trigger phrases, you can send prompts, erase dictated text, or interrupt the model mid-sentence. It runs entirely on your own account, ensuring you never sacrifice the intelligence you're used to having—all while your conversations are kept private and secure.
-                </p>
-            </div>
-            
+            <h2 class="relative z-10 text-xl md:text-2xl font-black text-stone-400 tracking-widest text-center">
+                So, what does GRVL <span class="italic font-serif text-white normal-case tracking-normal">actually</span> do?
+            </h2>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 pb-24 text-center lg:text-left">
+        <div class="space-y-8 text-lg text-stone-400 leading-relaxed font-medium">
+            <p>
+                To maintain a fast conversational flow, 'voice mode' models are often throttled in all sorts of ways—from their internal reasoning capabilities, to the amount of text they are willing to generate, to the internal tools they are allowed to use.
+            </p>
+            <p>
+                <span class="whitespace-nowrap font-black text-white tracking-widest">G.R.V.L.</span> is a Chrome extension for <strong class="text-white">G</strong>emini that initiates a <strong class="text-white">R</strong>eactive <strong class="text-white">V</strong>oice-controlled <strong class="text-white">L</strong>oop to give your hands-free AI its brain back. It works directly on your desktop, exactly as if you were typing the prompts yourself. You can dictate your thoughts, send them, and have the response read aloud in a continuous loop—all without ever touching your keyboard. 
+            </p>
+            <p>
+                Using fully customizable trigger phrases, you can send prompts, erase dictated text, or interrupt the model mid-sentence. It runs entirely on your own Gemini account, ensuring you never sacrifice the intelligence you're used to having—all while your conversations are kept private and secure.
+            </p>
         </div>
     </section>
 
@@ -160,11 +169,9 @@
             setTimeout(() => {
                 if (showingFirstImage) {
                     frontImage.src = 'diorama-2.jpeg'; 
-                    // Gray Base, White Highlight
                     statusText.innerHTML = '<span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">GRVL keeps your model\'s intelligence <span class="italic font-serif text-white">solid.</span></span>';
                 } else {
                     frontImage.src = 'diorama-1.jpeg'; 
-                    // Gray Base, White Highlight
                     statusText.innerHTML = '<span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">Native voice mode makes your AI seem dumber than a <span class="italic text-white font-serif">box of rocks.</span></span>';
                 }
                 statusText.style.opacity = '1';
