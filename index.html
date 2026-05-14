@@ -25,7 +25,6 @@
 
     <nav class="w-full max-w-5xl mx-auto px-6 py-8 flex justify-between items-center">
         <span class="font-black tracking-tighter text-white text-xl">GRVL</span>
-        
         <a href="grvl-extension.zip" download class="text-xs font-bold uppercase tracking-widest text-stone-400 hover:text-white transition-colors border border-stone-800 px-4 py-2 rounded-full hover:bg-stone-800/50 block text-center">
             Download GRVL
         </a>
@@ -36,14 +35,13 @@
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-8 text-[#efedea]">
                 Don't get your hands dirty.
             </h1>
-            <img src="paper-logo-dark.png" alt="GRVL Logo" class="w-full h-auto max-w-3xl mx-auto hover:scale-[1.01] transition-transform duration-500 drop-shadow-[0_0_3px_rgba(0,0,0,0.8)]">
+            <img src="assets/paper-logo-dark.png" alt="GRVL Logo" class="w-full h-auto max-w-3xl mx-auto hover:scale-[1.01] transition-transform duration-500 drop-shadow-[0_0_3px_rgba(0,0,0,0.8)]">
         </div>
     </section>
 
     <section id="the-box" class="pt-8 pb-16 px-6 flex flex-col items-center justify-center">
-        
         <div class="mb-10 flex justify-center w-full">
-            <div id="toggle-btn" class="relative flex items-center bg-[#151517] border border-stone-800 rounded-full p-1 cursor-pointer w-[320px]">
+            <div id="toggle-btn" role="switch" aria-checked="false" tabindex="0" class="relative flex items-center bg-[#151517] border border-stone-800 rounded-full p-1 cursor-pointer w-[320px]">
                 <div id="toggle-slider" class="absolute left-1 top-1 w-[calc(50%-4px)] h-[calc(100%-8px)] bg-stone-700 rounded-full transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1)"></div>
                 <div class="relative z-10 w-1/2 text-center py-2 text-xs tracking-widest uppercase font-bold text-white transition-colors duration-300" id="label-before">Before GRVL</div>
                 <div class="relative z-10 w-1/2 text-center py-2 text-xs tracking-widest uppercase font-bold text-stone-500 transition-colors duration-300" id="label-after">After GRVL</div>
@@ -59,19 +57,18 @@
         <div id="diorama-container" class="relative w-full max-w-[800px] aspect-[16/9] mx-auto group paper-shadow" style="perspective: 1200px;">
             <div id="diorama-card" class="w-full h-full relative rounded-sm" style="transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);">
                 <div class="absolute inset-0 w-full h-full" style="backface-visibility: hidden;">
-                    <img id="front-image" src="diorama-1.jpeg" class="w-full h-full object-cover border-[6px] border-[#151517] rounded-sm" alt="The Struggle">
+                    <img id="front-image" src="assets/diorama-1.jpeg" class="w-full h-full object-cover border-[6px] border-[#151517] rounded-sm" alt="The Struggle">
                 </div>
                 <div class="absolute inset-0 w-full h-full" style="backface-visibility: hidden; transform: rotateX(180deg);">
-                    <img src="cardboard.jpeg" class="w-full h-full object-cover border-[6px] border-[#151517] rounded-sm" alt="Cardboard Back">
+                    <img src="assets/cardboard.jpeg" class="w-full h-full object-cover border-[6px] border-[#151517] rounded-sm" alt="Cardboard Back">
                 </div>
             </div>
         </div>
     </section>
 
-  <section class="w-full max-w-4xl mx-auto px-6 py-12 flex justify-center">
+    <section class="w-full max-w-4xl mx-auto px-6 py-12 flex justify-center">
         <div class="relative flex items-center justify-center py-8 md:py-10 px-12 md:px-32 drop-shadow-xl w-[90%] md:w-auto">
-            <img src="dark-grey-paper.png" class="absolute inset-0 w-full h-full object-fill pointer-events-none" alt="Paper Strip">
-            
+            <img src="assets/dark-grey-paper.png" class="absolute inset-0 w-full h-full object-fill pointer-events-none" alt="Paper Strip">
             <h2 class="relative z-10 text-2xl md:text-3xl font-black text-stone-400 tracking-widest text-center whitespace-nowrap">
                 So, what does GRVL <span class="italic font-serif text-white normal-case tracking-normal mr-4">actually</span>do?
             </h2>
@@ -80,25 +77,18 @@
 
     <section class="max-w-4xl mx-auto px-6 pb-24 text-center lg:text-left">
         <div class="space-y-8 text-lg text-stone-400 leading-relaxed font-medium">
-            <p>
-                To maintain a fast conversational flow, 'voice mode' models are often throttled in all sorts of ways—from their internal reasoning capabilities, to the amount of text they are willing to generate, to the internal tools they are allowed to use.
-            </p>
-            <p>
-                <span class="whitespace-nowrap font-black text-white tracking-widest">G.R.V.L.</span> is a Chrome extension for <strong class="text-white">G</strong>emini that initiates a <strong class="text-white">R</strong>eactive <strong class="text-white">V</strong>oice-controlled <strong class="text-white">L</strong>oop within a normal chat to give your hands-free AI its brain back. It works directly on your desktop, exactly as if you were typing the prompts yourself. You can dictate your thoughts, send them, and have the response read aloud in a continuous loop—all without ever touching your keyboard. 
-            </p>
-            <p>
-                Using fully customizable trigger phrases, you can send prompts, erase dictated text, or interrupt the model mid-sentence. It runs entirely on your own Gemini account, ensuring you never sacrifice the intelligence you're used to having—all while your conversations are kept private and secure.
-            </p>
+            <p>To maintain a fast conversational flow, 'voice mode' models are often throttled in all sorts of ways—from their internal reasoning capabilities, to the amount of text they are willing to generate, to the internal tools they are allowed to use. The result of this throttling is a model that often refuses complex tasks, hallucinates facts, or cuts off its own research just to keep the conversation moving along.</p>
+            <p><span class="whitespace-nowrap font-black text-white tracking-widest">G.R.V.L.</span> is a Chrome extension for <strong class="text-white">G</strong>emini that initiates a <strong class="text-white">R</strong>eactive <strong class="text-white">V</strong>oice-controlled <strong class="text-white">L</strong>oop within a normal chat to give your hands-free AI its brain back. It works directly on your desktop, exactly as if you were typing the prompts yourself. You can dictate your thoughts, send them, and have the response read aloud in a continuous loop—all without ever touching your keyboard.</p>
+            <p>Using fully customizable trigger phrases, you can send prompts, erase dictated text, or interrupt the model mid-sentence. It runs entirely on your own Gemini account, ensuring you never sacrifice the intelligence you're used to having—all while your conversations are kept private and secure.</p>
         </div>
     </section>
 
-   <section class="max-w-4xl mx-auto px-6 py-12 text-center">
-        
+    <section class="max-w-4xl mx-auto px-6 py-12 text-center">
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <button onclick="toggleThrottle()" id="throttle-btn" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-64 text-center">
+            <button onclick="toggleThrottle()" id="throttle-btn" aria-expanded="false" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-64 text-center">
                 See Model Throttling
             </button>
-            <button onclick="toggleVideo()" id="demo-btn" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-64 text-center">
+            <button onclick="toggleVideo()" id="demo-btn" aria-expanded="false" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-64 text-center">
                 Watch the Demo
             </button>
         </div>
@@ -106,7 +96,7 @@
         <div id="throttle-container" class="overflow-hidden transition-all duration-700 ease-in-out max-h-0 opacity-0 w-full mb-8">
             <div class="bg-[#0e0e10] p-6 rounded-xl border border-stone-800 shadow-2xl">
                 <div class="mb-8 flex justify-center w-full">
-                    <div id="comp-toggle-btn" class="relative flex items-center bg-[#151517] border border-stone-800 rounded-full p-1 cursor-pointer w-[320px]">
+                    <div id="comp-toggle-btn" role="switch" aria-checked="false" tabindex="0" class="relative flex items-center bg-[#151517] border border-stone-800 rounded-full p-1 cursor-pointer w-[320px]">
                         <div id="comp-toggle-slider" class="absolute left-1 top-1 w-[calc(50%-4px)] h-[calc(100%-8px)] bg-stone-700 rounded-full transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1)"></div>
                         <div class="relative z-10 w-1/2 text-center py-2 text-xs tracking-widest uppercase font-bold text-white transition-colors duration-300" id="comp-label-before">Native Voice</div>
                         <div class="relative z-10 w-1/2 text-center py-2 text-xs tracking-widest uppercase font-bold text-stone-500 transition-colors duration-300" id="comp-label-after">With GRVL</div>
@@ -114,8 +104,8 @@
                 </div>
 
                 <div class="relative w-full aspect-[16/10] rounded-lg overflow-hidden border border-stone-900 bg-[#151517]">
-                    <img id="comp-img-native" src="throttle-1.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-100" alt="Native Voice Refusal">
-                    <img id="comp-img-grvl" src="throttle-2.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-0" alt="GRVL Success">
+                    <img id="comp-img-native" src="assets/throttle-1.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-100" alt="Native Voice Refusal">
+                    <img id="comp-img-grvl" src="assets/throttle-2.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-0" alt="GRVL Success">
                 </div>
             </div>
         </div>
@@ -130,7 +120,7 @@
     <section class="max-w-3xl mx-auto px-6 py-32 space-y-4">
         <h3 class="text-stone-600 font-bold text-xs uppercase tracking-[0.2em] mb-12 text-center">Technical Architecture</h3>
         
-        <div class="border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer" onclick="this.classList.toggle('accordion-active')">
+        <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none focus:ring-2 focus:ring-stone-500" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
             <div class="w-full p-6 flex justify-between items-center select-none">
                 <span class="font-bold text-lg text-stone-200">Zero Server Storage (Privacy First)</span>
                 <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
@@ -138,9 +128,9 @@
             <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
                 <p class="pb-6">GRVL operates entirely within your browser's DOM. We do not route your conversations through third-party APIs or store a single line of your data. Your chats are saved directly to your native Google account, exactly as they would be if you typed them.</p>
             </div>
-        </div>
+        </button>
 
-        <div class="border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer" onclick="this.classList.toggle('accordion-active')">
+        <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none focus:ring-2 focus:ring-stone-500" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
             <div class="w-full p-6 flex justify-between items-center select-none">
                 <span class="font-bold text-lg text-stone-200">Customizable Hot-Phrases</span>
                 <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
@@ -148,141 +138,12 @@
             <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
                 <p class="pb-6">You control the loop. Configure your own custom verbal commands to execute actions like <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Send Prompt"</span>, <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Scratch That"</span>, or <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Stop Reading"</span>.</p>
             </div>
-        </div>
+        </button>
     </section>
 
     <footer class="py-12 text-center border-t border-stone-900/50 text-stone-600 text-xs font-bold tracking-widest uppercase">
-        
     </footer>
 
-    <script>
-        const toggleBtn = document.getElementById('toggle-btn');
-        const toggleSlider = document.getElementById('toggle-slider');
-        const labelBefore = document.getElementById('label-before');
-        const labelAfter = document.getElementById('label-after');
-        
-        const card = document.getElementById('diorama-card');
-        const frontImage = document.getElementById('front-image');
-        const statusText = document.getElementById('toggle-status');
-        
-        let currentRotation = 0;
-        let showingFirstImage = true;
-        let isAnimating = false;
-
-        toggleBtn.addEventListener('click', () => {
-            if (isAnimating) return; 
-            isAnimating = true;
-
-            currentRotation -= 360;
-            card.style.transform = `rotateX(${currentRotation}deg)`;
-            
-            statusText.style.opacity = '0';
-            
-            if (showingFirstImage) {
-                toggleSlider.style.transform = 'translateX(100%)';
-                labelBefore.classList.remove('text-white');
-                labelBefore.classList.add('text-stone-500');
-                labelAfter.classList.remove('text-stone-500');
-                labelAfter.classList.add('text-white');
-            } else {
-                toggleSlider.style.transform = 'translateX(0)';
-                labelBefore.classList.remove('text-stone-500');
-                labelBefore.classList.add('text-white');
-                labelAfter.classList.remove('text-white');
-                labelAfter.classList.add('text-stone-500');
-            }
-
-            setTimeout(() => {
-                if (showingFirstImage) {
-                    frontImage.src = 'diorama-2.jpeg'; 
-                    statusText.innerHTML = '<span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">GRVL keeps your model\'s intelligence <span class="italic font-serif text-white">solid.</span></span>';
-                } else {
-                    frontImage.src = 'diorama-1.jpeg'; 
-                    statusText.innerHTML = '<span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">Native voice mode makes your AI seem dumber than a <span class="italic text-white font-serif">box of rocks.</span></span>';
-                }
-                statusText.style.opacity = '1';
-                showingFirstImage = !showingFirstImage;
-            }, 400);
-
-            setTimeout(() => { isAnimating = false; }, 800); 
-        });
-
-        function toggleVideo() {
-            const container = document.getElementById('video-container');
-            const btn = document.getElementById('demo-btn');
-            
-            if (container.style.maxHeight) {
-                container.style.maxHeight = null;
-                container.style.opacity = '0';
-                btn.innerHTML = 'Watch the Demo';
-            } else {
-                container.style.maxHeight = "800px";
-                container.style.opacity = '1';
-                btn.innerHTML = 'Close Demo';
-                setTimeout(() => {
-                    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 300);
-            }
-        }
-
-        // --- NEW: THROTTLE DROPDOWN LOGIC ---
-        function toggleThrottle() {
-            const container = document.getElementById('throttle-container');
-            const btn = document.getElementById('throttle-btn');
-            
-            if (container.style.maxHeight) {
-                container.style.maxHeight = null;
-                container.style.opacity = '0';
-                btn.innerHTML = 'See Model Throttling';
-            } else {
-                container.style.maxHeight = "1200px"; // Gives it plenty of room to open
-                container.style.opacity = '1';
-                btn.innerHTML = 'Close Example';
-                setTimeout(() => {
-                    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 300);
-            }
-        }
-
-        // --- NEW: THROTTLE IMAGE TOGGLE LOGIC ---
-        const compToggleBtn = document.getElementById('comp-toggle-btn');
-        const compToggleSlider = document.getElementById('comp-toggle-slider');
-        const compLabelBefore = document.getElementById('comp-label-before');
-        const compLabelAfter = document.getElementById('comp-label-after');
-        const compImgNative = document.getElementById('comp-img-native');
-        const compImgGrvl = document.getElementById('comp-img-grvl');
-        
-        let compShowingNative = true;
-        let compIsAnimating = false;
-
-        compToggleBtn.addEventListener('click', () => {
-            if (compIsAnimating) return; 
-            compIsAnimating = true;
-
-            if (compShowingNative) {
-                compToggleSlider.style.transform = 'translateX(100%)';
-                compLabelBefore.classList.remove('text-white');
-                compLabelBefore.classList.add('text-stone-500');
-                compLabelAfter.classList.remove('text-stone-500');
-                compLabelAfter.classList.add('text-white');
-                
-                compImgNative.style.opacity = '0';
-                compImgGrvl.style.opacity = '1';
-            } else {
-                compToggleSlider.style.transform = 'translateX(0)';
-                compLabelBefore.classList.remove('text-stone-500');
-                compLabelBefore.classList.add('text-white');
-                compLabelAfter.classList.remove('text-white');
-                compLabelAfter.classList.add('text-stone-500');
-
-                compImgNative.style.opacity = '1';
-                compImgGrvl.style.opacity = '0';
-            }
-
-            compShowingNative = !compShowingNative;
-            setTimeout(() => { compIsAnimating = false; }, 500); 
-        });
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
