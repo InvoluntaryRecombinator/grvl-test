@@ -23,12 +23,21 @@
 </head>
 <body class="bg-[#0e0e10] text-stone-300 font-sans selection:bg-stone-500/30 dot-grid">
 
-    <nav class="w-full max-w-5xl mx-auto px-6 py-8 flex justify-between items-center">
-        <span class="font-black tracking-tighter text-white text-xl">GRVL</span>
-        <a href="grvl-extension.zip" download class="text-xs font-bold uppercase tracking-widest text-stone-400 hover:text-white transition-colors border border-stone-800 px-4 py-2 rounded-full hover:bg-stone-800/50 block text-center">
-            Download GRVL
-        </a>
-    </nav>
+    <header class="sticky top-0 z-50 w-full bg-[#0e0e10]/80 backdrop-blur-md border-b border-stone-900/50">
+        <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-black tracking-tighter text-stone-100 text-xl">GRVL</span>
+            
+            <div class="hidden md:flex items-center gap-3">
+                <a href="#capabilities" class="text-[10px] font-bold uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors border border-stone-800/40 px-4 py-2 rounded-full">Capabilities</a>
+                <a href="#architecture" class="text-[10px] font-bold uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors border border-stone-800/40 px-4 py-2 rounded-full">Technical</a>
+                <a href="#the-demo" class="text-[10px] font-bold uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors border border-stone-800/40 px-4 py-2 rounded-full">See Demo</a>
+            </div>
+
+            <a href="grvl-extension.zip" download class="text-[10px] font-bold uppercase tracking-widest text-stone-100 bg-stone-800/40 border border-stone-700/50 px-4 py-2 rounded-full hover:bg-stone-700 transition-all">
+                Download
+            </a>
+        </nav>
+    </header>
 
     <section class="relative pt-12 pb-16 flex flex-col items-center justify-center px-6">
         <div class="text-center w-full max-w-4xl">
@@ -83,7 +92,7 @@
         </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <section id="the-demo" class="max-w-4xl mx-auto px-6 py-12 text-center">
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <button onclick="toggleThrottle()" id="throttle-btn" aria-expanded="false" class="px-8 py-4 bg-[#151517] border border-stone-800 text-stone-300 hover:text-white hover:border-stone-500 font-bold tracking-widest uppercase text-xs rounded-full transition-all w-full sm:w-64 text-center">
                 See Model Throttling
@@ -120,7 +129,7 @@
         </div>
     </section>
 
-   <section class="max-w-3xl mx-auto px-6 pt-32 pb-4 space-y-4">
+   <section id="capabilities" class="max-w-3xl mx-auto px-6 pt-32 pb-4 space-y-4">
         <h3 class="text-stone-600 font-bold text-xs uppercase tracking-[0.2em] mb-12 text-center">Capabilities</h3>
         
         <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
@@ -135,7 +144,7 @@
 
         <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
             <div class="w-full p-6 flex justify-between items-center select-none">
-                <span class="font-bold text-lg text-stone-200">Walk-Away Wireless Loop</span>
+                <span class="font-bold text-lg text-stone-200">Untethered Bluetooth Loop</span>
                 <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
             </div>
             <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
@@ -164,7 +173,7 @@
         </button>
     </section>
 
-    <section class="max-w-3xl mx-auto px-6 pt-24 pb-32 space-y-4">
+    <section id="architecture" class="max-w-3xl mx-auto px-6 pt-24 pb-32 space-y-4">
         <h3 class="text-stone-600 font-bold text-xs uppercase tracking-[0.2em] mb-12 text-center">Technical Architecture</h3>
         
         <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
@@ -188,7 +197,15 @@
         </button>
     </section>
 
-    <footer class="py-12 text-center border-t border-stone-900/50 text-stone-600 text-xs font-bold tracking-widest uppercase">
+    <footer class="py-24 flex flex-col items-center justify-center border-t border-stone-900/50 dot-grid">
+        <div class="opacity-20 hover:opacity-100 transition-opacity duration-1000">
+            <span class="font-black tracking-tighter text-stone-500 text-3xl block text-center">GRVL</span>
+            <span class="text-[9px] text-stone-600 tracking-[0.5em] uppercase mt-4 block text-center">Ambient Intelligence Engine</span>
+        </div>
+        
+        <div class="mt-12 text-[8px] text-stone-800 tracking-widest uppercase">
+            &copy; 2026 / Zero-Knowledge Architecture
+        </div>
     </footer>
 
     <script src="script.js"></script>
