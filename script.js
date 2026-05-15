@@ -65,19 +65,24 @@ toggleBtn.addEventListener('keydown', (e) => {
 function toggleVideo() {
     const container = document.getElementById('video-container');
     const btn = document.getElementById('demo-btn');
+    const video = document.getElementById('grvlVideo'); // Grab the video
     
     if (container.style.maxHeight) {
+        // Closing the accordion
         container.style.maxHeight = null;
         container.style.opacity = '0';
         btn.innerHTML = 'Watch the Demo';
         btn.setAttribute('aria-expanded', 'false');
+        if (video) video.pause(); // Auto-pause so it doesn't keep playing in the background
     } else {
-        container.style.maxHeight = "800px";
+        // Opening the accordion
+        container.style.maxHeight = "1200px"; // Gave it a bit more room just in case
         container.style.opacity = '1';
         btn.innerHTML = 'Close Demo';
         btn.setAttribute('aria-expanded', 'true');
         setTimeout(() => {
             container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (video) video.play(); // Auto-play the video as soon as it scrolls into view
         }, 300);
     }
 }
