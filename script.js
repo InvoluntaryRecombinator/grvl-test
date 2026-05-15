@@ -40,7 +40,7 @@ function handleDioramaToggle() {
     setTimeout(() => {
         if (showingFirstImage) {
             frontImage.src = 'assets/diorama-2.jpeg'; 
-            statusText.innerHTML = '<span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">GRVL keeps your model\'s intelligence <span class="italic font-serif text-white">solid.</span></span>';
+            statusText.innerHTML = '<span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">GRVL keeps your model\'s intelligence <span class="italic font-serif text-stone-100">solid.</span></span>';
         } else {
             frontImage.src = 'assets/diorama-1.jpeg'; 
             statusText.innerHTML = '<span class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-stone-400">Native voice mode can make your AI seem dumber than a <span class="italic text-white font-serif">box of rocks.</span></span>';
