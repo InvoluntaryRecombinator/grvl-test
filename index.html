@@ -120,26 +120,70 @@
         </div>
     </section>
 
-    <section class="max-w-3xl mx-auto px-6 py-32 space-y-4">
+   <section class="max-w-3xl mx-auto px-6 pt-32 pb-4 space-y-4">
+        <h3 class="text-stone-600 font-bold text-xs uppercase tracking-[0.2em] mb-12 text-center">Capabilities</h3>
+        
+        <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
+            <div class="w-full p-6 flex justify-between items-center select-none">
+                <span class="font-bold text-lg text-stone-200">Native Account Persistence</span>
+                <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
+            </div>
+            <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
+                <p class="pb-6">Unlike typical voice modes that operate in isolated sessions, GRVL is built directly into your primary Gemini interface. This ensures your LLM remembers your active projects, cross-references previous chats, and respects your personalized instructions. GRVL gives you access to the same model behavior you have at your keyboard, without actually having to be there.</p>
+            </div>
+        </button>
+
+        <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
+            <div class="w-full p-6 flex justify-between items-center select-none">
+                <span class="font-bold text-lg text-stone-200">Walk-Away Wireless Loop</span>
+                <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
+            </div>
+            <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
+                <p class="pb-6">Connect your Bluetooth headphones and leave your desk behind. Whether you're making a cup of coffee or pacing your office, the loop stays hot. As long as you're in wireless range, your model is in your ear and ready for your next command.</p>
+            </div>
+        </button>
+
+        <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
+            <div class="w-full p-6 flex justify-between items-center select-none">
+                <span class="font-bold text-lg text-stone-200">Unthrottled Intelligence</span>
+                <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
+            </div>
+            <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
+                <p class="pb-6">Native mobile voice models often refuse to utilize personalization features or access the specialized tools available in desktop chats. Because GRVL initiates its loop within a standard chat window, you maintain 100% access to your model’s full reasoning capabilities and specialized toolsets with zero compromises.</p>
+            </div>
+        </button>
+
+        <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
+            <div class="w-full p-6 flex justify-between items-center select-none">
+                <span class="font-bold text-lg text-stone-200">Fully Customizable Control</span>
+                <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
+            </div>
+            <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
+                <p class="pb-6">You define the vocabulary of your loop. Map any verbal phrase to critical actions like <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Send Prompt"</span>, <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Scratch That"</span>, or <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Stop Talking"</span>.</p>
+            </div>
+        </button>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-6 pt-24 pb-32 space-y-4">
         <h3 class="text-stone-600 font-bold text-xs uppercase tracking-[0.2em] mb-12 text-center">Technical Architecture</h3>
         
-        <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none focus:ring-2 focus:ring-stone-500" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
+        <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
             <div class="w-full p-6 flex justify-between items-center select-none">
                 <span class="font-bold text-lg text-stone-200">Zero Server Storage (Privacy First)</span>
                 <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
             </div>
             <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
-                <p class="pb-6">GRVL operates entirely within your browser's DOM. We do not route your conversations through third-party APIs or store a single line of your data. Your chats are saved directly to your native Google account, exactly as they would be if you typed them.</p>
+                <p class="pb-6">GRVL operates entirely within your browser's DOM. We do not route your conversations through third-party servers or store a single line of your data. Your chats are saved directly to your native Google account, exactly as they would be if you typed them manually.</p>
             </div>
         </button>
 
-        <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none focus:ring-2 focus:ring-stone-500" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
+        <button type="button" aria-expanded="false" class="block w-full text-left border border-stone-800/50 rounded-lg bg-[#151517] transition-all hover:bg-[#1a1a1c] cursor-pointer focus:outline-none" onclick="this.classList.toggle('accordion-active'); this.setAttribute('aria-expanded', this.classList.contains('accordion-active'))">
             <div class="w-full p-6 flex justify-between items-center select-none">
-                <span class="font-bold text-lg text-stone-200">Fully Customizable Control-Phrases</span>
+                <span class="font-bold text-lg text-stone-200">API-Free Lightweight Design</span>
                 <span class="chevron transition-transform duration-300 text-stone-600">▼</span>
             </div>
             <div class="accordion-content px-6 text-stone-500 text-base leading-relaxed">
-                <p class="pb-6">You control the loop. Configure your own custom verbal commands to execute actions like <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Send Prompt"</span>, <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Scratch That"</span>, or <span class="bg-stone-800 text-stone-300 px-2 py-0.5 rounded text-sm font-mono mx-1">"Stop Talking"</span>.</p>
+                <p class="pb-6">By tapping into your computer's native Speech Recognition engine and the existing Gemini TTS, GRVL remains incredibly nimble. By bypassing third-party APIs for voice-to-text, we keep the extension lightweight, minimize latency, and ensure it remains free to use.</p>
             </div>
         </button>
     </section>
